@@ -1,47 +1,69 @@
-
 #include <iostream>
-using namespace std;
+
+ 
 
 int main()
+
 {
-    char op;
-    double num1;
-    double num2;
-    double result;
+
+    double temp;
+
+    char unit;
 
 
-    std::cout << "Enter either (+ - * /)";
-    std::cin >> op;
-    std::cout <<"Enter #1 ";
-    std::cin >>num1;
-    std::cout <<"Enter #2 ";
-    std::cin >>num2;
 
-switch(op){
-    case '+':
-    result=num1+num2;
-    std::cout<<"result " << result << '\n';
-    break;
+    std::cout << "*** Temperature conversion *****\n";
 
-    case '-':
-    result=num1-num2;
-    std::cout<<"result " << result << '\n';
-    break;
+    std::cout << "F = Fahrenheit\n";
 
-    case '*':
-    result=num1*num2;
-    std::cout<<"result " << result << '\n';
-    break;
+    std::cout << "C = Celsius\n";
+
+    std::cout << "What unit would you like to convert to: ";
+
+    std::cin >> unit;
 
 
-    case '/':
-    result=num1/num2;
-    std::cout<<"result " << result << '\n';
-    break;
-    defualt:
-    std::cout<< "That wasnt a valid responce\n";
-    break;
-}
+
+    if(unit == 'F' || unit == 'f'){
+
+        std::cout << "Enter the temperature in Celsius: ";
+
+        std::cin >> temp;
+
+
+
+        temp = (1.8 * temp) + 32.0;
+
+        std::cout << "Temperature is: " << temp << "°F\n";
+
+    }
+
+    else if(unit == 'C' || unit == 'c'){
+
+        std::cout << "Enter the temperature in Fahrenheit: ";
+
+        std::cin >> temp;
+
+
+
+        temp = (temp - 32) / 1.8;
+
+        std::cout << "Temperature is: " << temp << "°C\n";
+
+    }
+
+    else{
+
+        std::cout << "Please enter in only C or F\n";
+
+    }
+
+
+
+    std::cout << "**********************************";
+
+
+
     return 0;
-}
 
+}
